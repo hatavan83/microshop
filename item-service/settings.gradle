@@ -1,1 +1,4 @@
 rootProject.name = 'item-service'
+include ':item-api'
+include ':item-common'
+include ':item-client'
