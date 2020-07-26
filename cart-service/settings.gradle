@@ -1,0 +1,10 @@
+rootProject.name = 'cart-service'
+include ':cart-common'
+include ':cart-api'
+include ':cart-client'
+
+includeBuild('../item-service') {
+    dependencySubstitution {
+        substitute module('dev.hata.microshop.item:item-client') with project(':item-client')
+    }
+}

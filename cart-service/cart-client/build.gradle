@@ -1,0 +1,12 @@
+dependencies {
+	api project(':cart-common')
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+}
+
+bootJar {
+	enabled = false
+}
+
+jar {
+	enabled = true
+}

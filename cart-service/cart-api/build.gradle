@@ -1,0 +1,20 @@
+dependencies {
+    implementation project(':cart-common')
+    implementation 'dev.hata.microshop.item:item-client'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.kafka:spring-kafka'
+    implementation "org.mapstruct:mapstruct:${LIBS_VERSION.mapstruct}"
+    implementation "javax.inject:javax.inject:${LIBS_VERSION.inject}"
+    implementation "org.springdoc:springdoc-openapi-webflux-ui:${LIBS_VERSION.springdoc}"
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor "org.mapstruct:mapstruct-processor:${LIBS_VERSION.mapstruct}"
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation 'io.projectreactor:reactor-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+}

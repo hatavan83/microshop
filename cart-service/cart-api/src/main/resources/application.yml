@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cart-service-api
+    item-service:
+      url: http://localhost:9090
+
+server:
+  port: 9091

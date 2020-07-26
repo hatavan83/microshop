@@ -1,0 +1,46 @@
+plugins {
+	id 'java-library'
+	id 'org.springframework.boot' version "${springBoot}"
+	id 'io.spring.dependency-management' version "${dependencyManagement}"
+}
+
+allprojects {
+	sourceCompatibility = '11'
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects {
+
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'java-library'
+
+    ext {
+        LIBS_VERSION = [
+            mapstruct: '1.3.1.Final',
+            inject: '1',
+            springdoc: '1.4.3'
+        ]
+    }
+
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+    dependencies {
+		compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+    }  
+
+	test {
+		useJUnitPlatform()
+	}
+}
+
+bootJar {
+	enabled = false
+}
